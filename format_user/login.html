@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <!-- logo box -->
+    <div class="logo-box">
+        <h1 class="logo">ㄱ</h1>
+        <h1 class="logo">ㅎ</h1>
+        <h1 class="logo">ㅈ</h1>
+    </div>
+    <h3 class="main-text">여행갈땐 이것만 <span>기억하자</span> :)</h3>
+
+    <!-- stick -->
+    <input id="login-select" type="checkbox">
+    <label for="login-select" class="login-select">
+        <div>
+            <p>ID로 로그인</p>
+            <p>SNS로 로그인</p>
+        </div>
+        <div class="stick">
+            <div class="ball"></div>
+        </div>
+    </label>
+    <form class="mem-login" action="#">
+        <!-- login container -->
+        <div class="login-cont">
+            <div>
+                <!-- api login (kakao, naver) -->
+                <button class="login-api login-btn-kakao">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15.241" height="14.193" viewBox="0 0 15.241 14.193">
+                        <path id="패스_1" data-name="패스 1"
+                            d="M8.532,2C12.3,2.007,16,4.568,16,7.882s-4.2,6.756-8.719,5.9c-.828.525-3.022,2.288-3.245,2.148-.374-.2,0-.842.552-2.943A5.71,5.71,0,0,1,1,7.878C1,4.565,4.76,1.992,8.532,2Z"
+                            transform="matrix(1, 0.017, -0.017, 1, -0.722, -2.017)" fill="#3b1e1e" />
+                    </svg>
+                    | <p>카카오 로그인</p>
+                </button>
+                <button class="login-api login-btn-naver">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13.75" viewBox="0 0 15 13.75">
+                        <path id="패스_2" data-name="패스 2"
+                            d="M0,0H5.18L9.809,6.669,9.819,0H15V13.75H9.809c-1.219-1.789-4.6-6.7-4.6-6.7s0,5.531,0,6.7H0Z"
+                            fill="#fff" />
+                    </svg>
+                    | <p>네이버 로그인</p>
+                </button>
+            </div>
+            <!-- id, pwd login -->
+            <input type="text" id="user-id" placeholder="아이디를 입력하세요" maxlength="12" autofocus>
+            <input type="password" id="user-pwd" placeholder="비밀번호를 입력하세요" maxlength="12">
+            <!-- login button -->
+            <button class="login-btn">로그인</button>
+        </div>
+    </form>
+    <!-- sign in, find id, pwd -->
+    <div class="sign-in">
+        <p>회원가입</p> | <p>아이디, 비밀번호 찾기</p>
+    </div>
+</body>
+
+</html>

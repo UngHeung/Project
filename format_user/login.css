@@ -1,0 +1,266 @@
+@import url(../reset.css);
+@import url(../root.css);
+@import url(../webFont.css);
+
+:root {
+    /* api background color */
+    --background-color-kakao: #fee500;
+    --background-color-naver: #19ce60;
+
+    /* api font color */
+    --font-color-kakao: #3b1e1e;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+    background-color: var(--color-red);
+}
+
+/* ===== logo, text ===== */
+.logo-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-logo);
+    font-size: 100px;
+    color: #fff;
+    animation: shake 1s step-end infinite alternate;
+    animation-timing-function: ease-in-out;
+}
+
+.main-text {
+    font-family: var(--font-main);
+    color: #fff;
+    letter-spacing: 4px;
+}
+
+/* ===== select api or id,pwd ===== */
+#login-select {
+    display: none;
+}
+
+/* move ball */
+#login-select:checked~.login-select>.stick>.ball {
+    left: 15px;
+}
+
+/* move login type box */
+#login-select:checked~.mem-login>.login-cont {
+    top: 0px;
+}
+
+.login-select div {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    width: 180px;
+    height: 30px;
+
+    font-size: 12px;
+    color: #fff;
+}
+
+.login-select div p {
+    width: 80px;
+    height: 14px;
+
+    text-align: center;
+
+    border-radius: 12px;
+    transition: box-shadow var(--transition-speed-fast);
+}
+
+.login-select div p:first-child {
+    border: 1px solid #fff;
+    box-shadow: 1px 1px 3px 1px #333;
+}
+
+/* select effect */
+#login-select:checked~.login-select div p:last-child {
+    border: 1px solid #fff;
+    box-shadow: 1px 1px 3px 1px #333;
+}
+
+#login-select:checked~.login-select div p:first-child {
+    border: none;
+    box-shadow: none;
+}
+
+/* stick */
+.login-select .stick {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    position: absolute;
+    top: 49%;
+    left: calc(50% - 15px);
+
+    width: 30px;
+    height: 15px;
+    background-color: #fff;
+
+    box-sizing: border-box;
+    box-shadow: inset 1px 1px 3px 1px rgba(51, 51, 51, 0.5);
+    border-radius: 10px;
+}
+
+/* ball */
+.login-select .stick .ball {
+    width: 13px;
+    height: 13px;
+    position: relative;
+    left: 0;
+
+    box-shadow: 1px 1px 3px #333;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+
+    transition: var(--transition-speed-normal);
+}
+
+/*===== member login =====*/
+/* view box */
+.mem-login {
+    width: 230px;
+    height: 130px;
+
+    margin-top: 60px;
+
+    overflow: hidden;
+
+    font-family: var(--font-main);
+
+}
+
+/* login all type box */
+.login-cont {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    position: relative;
+    top: -160px;
+
+    height: 290px;
+    transition: var(--transition-speed-normal);
+}
+
+.login-cont div {
+    display: flex;
+    flex-wrap: wrap;
+
+    height: 90px;
+    /* api, id-pwd 사이 */
+    padding-bottom: 60px;
+}
+
+/* id, pwd login input, button */
+.mem-login input,
+.mem-login .login-btn {
+    box-sizing: border-box;
+    width: 230px;
+    height: 35px;
+
+    border-radius: 3px;
+    border: none;
+    background-color: #fff;
+}
+
+.mem-login input {
+    background-color: #fff;
+    text-align: center;
+}
+
+.mem-login input:focus,
+.mem-login button:focus {
+    outline: none;
+}
+
+.mem-login .login-btn {
+    background-color: #333;
+    color: #fff;
+    font-weight: 600;
+
+    transition: var(--transition-speed-fast);
+    cursor: pointer;
+}
+
+.mem-login .login-btn:hover {
+    filter: brightness(130%);
+}
+
+/* api login */
+.mem-login .login-api {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 230px;
+    height: 35px;
+
+    font-weight: 600;
+
+    border: none;
+    border-radius: 3px;
+
+    transition: var(--transition-speed-fast);
+    cursor: pointer;
+}
+
+.mem-login .login-api:hover {
+    filter: brightness(110%);
+}
+
+/* kakao login button */
+.mem-login .login-btn-kakao {
+    background-color: var(--background-color-kakao);
+    color: var(--font-color-kakao);
+}
+
+/* naver login button */
+.mem-login .login-btn-naver {
+    background-color: var(--background-color-naver);
+    color: #fff;
+}
+
+.sign-in {
+    display: flex;
+    justify-content: space-evenly;
+
+    width: 200px;
+    font-family: var(--font-main);
+    font-size: 12px;
+    color: #fff;
+
+    cursor: default;
+}
+
+.sign-in p {
+    cursor: pointer;
+}
+
+.sign-in p:hover {
+    text-decoration: underline;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(5deg);
+    }
+}
