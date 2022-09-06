@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기억하자! 회원가입</title>
+    <link rel="stylesheet" href="signIn.css">
+</head>
+
+<body>
+    <!-- sign in form -->
+    <form class="sign-in-cont" name="terms-check">
+        <div class="mem-terms">
+            <!-- title -->
+            <h1>회원가입 약관</h1>
+            <div class="checkbox-area">
+                <!-- agree all -->
+                <input type="checkbox" id="terms-all" class="check-box">
+                <label for="terms-all">
+                    <div class="check-box-view"></div>
+                    <p>기억하자 이용약관, 개인정보 수집 및 이용, 위치기반서비스 이용에 모두 동의</p>
+                </label>
+            </div>
+            <div class="checkbox-area">
+                <!-- 1 essential -->
+                <input type="checkbox" name="terms-1st" id="terms-1st" class="check-box">
+                <label for="terms-1st">
+                    <!-- checkbox -->
+                    <div class="check-box-view"></div>
+                    <p>기억하자 이용약관 동의<span>(필수)</span></p>
+                </label>
+            </div>
+            <!-- contents 1 -->
+            <p class="terms-box terms-1st">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, amet fugiat dolorum cupiditate animi
+                suscipit quia voluptatem aut consequuntur facere. Rerum culpa veritatis facilis! Autem perferendis cum
+                repellendus id voluptate fugit nostrum consequuntur excepturi tenetur quis, labore quos? Aperiam dicta
+                adipisci architecto dolore voluptatum neque eaque explicabo! Error doloremque, earum fuga recusandae
+                quaerat magnam culpa pariatur fugit eaque nostrum aliquam excepturi eveniet ea qui optio rem tempora
+                possimus est corporis natus dolore voluptates ipsum quia. Atque eaque nisi sequi illo temporibus
+                maiores, voluptatibus, explicabo corporis vero aspernatur non at deleniti. Est laboriosam dolore aliquid
+                dolor id eos aperiam veniam consequuntur.
+            </p>
+            <div class="checkbox-area">
+                <!-- 2 essential -->
+                <input type="checkbox" name="terms-2nd" id="terms-2nd" class="check-box">
+                <label for="terms-2nd">
+                    <!-- checkbox -->
+                    <div class="check-box-view"></div>
+                    <p>개인정보 수집 및 이용 동의<span>(필수)</span></p>
+                </label>
+            </div>
+            <!-- contents 2 -->
+            <p class="terms-box terms-2nd">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi non cupiditate cumque cum, maiores
+                voluptates at rerum dicta aliquam velit hic tempora id fuga, modi praesentium saepe! Ipsum quo
+                praesentium ducimus tempora culpa magnam molestiae unde quis repellat iste. Iste modi fugit sequi quia
+                sunt quisquam reprehenderit, beatae odio placeat perspiciatis facere maxime amet excepturi minus quidem
+                aliquid similique, commodi quibusdam tempore dicta libero itaque blanditiis. Ipsam itaque similique
+                voluptatem quos aliquam, explicabo harum numquam autem natus quidem voluptate ad laborum quis ab, labore
+                reprehenderit expedita asperiores temporibus! Cum ea similique tempora quidem? Deleniti, ipsum minima.
+                Atque magni nostrum quaerat?
+            </p>
+            <div class="checkbox-area">
+                <!-- 3 optional -->
+                <input type="checkbox" name="terms-3rd" id="terms-3rd" class="check-box">
+                <label for="terms-3rd">
+                    <!-- checkbox -->
+                    <div class="check-box-view"></div>
+                    <p>위치기반서비스 이용약관 동의<span>(선택)</span></p>
+                </label>
+            </div>
+            <!-- contents 3 -->
+            <p class="terms-box terms-3rd">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt adipisci minima nihil dolorum nulla
+                distinctio numquam exercitationem! Hic culpa ducimus nostrum perspiciatis explicabo voluptates
+                repellendus tenetur molestiae temporibus, sit enim dicta consequatur laborum quaerat labore nulla,
+                laboriosam quia, mollitia a quibusdam inventore possimus nihil. Officia nesciunt quis consectetur cumque
+                alias similique? Libero aliquam similique quaerat harum, porro minima officiis at voluptates quasi
+                beatae, ipsum quas, ex nisi eligendi earum rerum optio atque natus facere minus eaque laboriosam.
+                Repellat, laboriosam. Quibusdam corrupti et esse, dolor porro quis mollitia impedit labore facilis
+                molestias nesciunt consectetur necessitatibus provident dignissimos minus iste id voluptatibus.
+            </p>
+            <!-- agree or reset button -->
+            <div class="terms-btn-box">
+                <button type="button" class="agree-btn button" disabled>확인</button>
+                <button type="button" class="back-btn button button-hover">취소</button>
+            </div>
+        </div>
+
+        <!-- input user info -->
+        <div class="user-info">
+            <div class="info-box">
+                <p></p>
+                <input type="text" class="user-id">
+            </div>
+            <div class="info-box">
+                <p></p>
+                <input type="password" class="user-pwd1">
+                <input type="password" class="user-pwd2">
+            </div>
+            <div class="info-box">
+                <p></p>
+                <input type="text" class="user-name">
+            </div>
+            <div class="info-box">
+                <p></p>
+                <input type="text" class="user-phone1">
+                <input type="text" class="user-phone2">
+                <input type="text" class="user-phone3">
+            </div>
+            <div class="info-box">
+                <p></p>
+                <input type="text" class="user-addr1">
+                <input type="text" class="user-addr2">
+            </div>
+        </div>
+    </form>
+</body>
+<script src="signIn.js"></script>
+
+</html>
