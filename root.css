@@ -1,0 +1,42 @@
+:root {
+    /* color */
+    --color-white: #fff;
+    --color-gray: rgb(150, 150, 150);
+    --color-black: #333;
+    --color-red: #B44949;
+
+    /* background color */
+    --background-color-body: #f3f3f3;
+    --background-color-menu: #fff;
+
+    /* background hover */
+    --background-color-menu-hover: #B44949;
+
+    /* font */
+    --font-logo: 'GangwonEduPowerExtraBoldA';
+    --font-main: 'Nanum Gothic';
+    --font-sub: 'GangwonEdu_OTFBoldA';
+
+    /* font size */
+    --font-size-logo: 25px;
+    --font-size-head: 20px;
+    --font-size-main: 14px;
+    --font-size-cont: 12px;
+
+    /* font color */
+    --basic-font-color: #333;
+    --main-color: #333;
+
+    /* font hover color */
+    --font-hover-color-logo: #B44949;
+    --font-hover-color-menu: #fff;
+    --font-hover-color: #B44949;
+
+    /* height */
+    --header-height: 60px;
+
+    /* transition speed */
+    --transition-speed-fast: .3s;
+    --transition-speed-normal: .5s;
+    --transition-speed-slow: .8s;
+}
