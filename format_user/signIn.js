@@ -62,11 +62,9 @@ function termsAgree() {
     termsPage.style.transition = "top 1.5s";
     termsPage.style.transitionTimingFunction =
         "cubic-bezier(0.11,-0.3, 0, 0.55)";
-    termsPage.style.top = "-700px";
+    termsPage.style.top = "-1000px";
 }
 
 agreeBtn.addEventListener("click", () => {
     termsAgree();
 });
-
-// button disable 상태 확인

@@ -92,29 +92,43 @@
 
         <!-- input user info -->
         <div class="user-info">
-            <div class="info-box">
-                <p></p>
-                <input type="text" class="user-id">
+            <!-- id input -->
+            <p class="info-name">아이디</p>
+            <div class="info-box1">
+                <input type="text" class="user-id" placeholder="아이디">
             </div>
-            <div class="info-box">
-                <p></p>
-                <input type="password" class="user-pwd1">
-                <input type="password" class="user-pwd2">
+            <!-- password input -->
+            <p class="info-name">비밀번호</p>
+            <div class="info-box2">
+                <input type="password" class="user-pwd1" placeholder="비밀번호">
+                <input type="password" class="user-pwd2" placeholder="비밀번호 확인">
             </div>
-            <div class="info-box">
-                <p></p>
-                <input type="text" class="user-name">
+            <!-- name input -->
+            <p class="info-name">이름</p>
+            <div class="info-box3">
+                <input type="text" class="user-name" placeholder="이름">
             </div>
-            <div class="info-box">
-                <p></p>
-                <input type="text" class="user-phone1">
-                <input type="text" class="user-phone2">
-                <input type="text" class="user-phone3">
+            <!-- phone input -->
+            <p class="info-name">전화번호</p>
+            <div class="info-box4">
+                <select name="mobile-carrier" id="mob-carr">
+                    <option value="mob-carr">SKT</option>
+                    <option value="mob-carr">KT</option>
+                    <option value="mob-carr">LG</option>
+                </select>
+                <input type="text" class="user-phone1" value="010" maxlength="3">
+                <input type="text" class="user-phone2" placeholder="0000" maxlength="4">
+                <input type="text" class="user-phone3" placeholder="0000" maxlength="4">
             </div>
-            <div class="info-box">
-                <p></p>
-                <input type="text" class="user-addr1">
-                <input type="text" class="user-addr2">
+            <!-- address input -->
+            <p class="info-name">주소</p>
+            <div class="info-box5">
+                <input type="text" class="user-addr1" placeholder="주소">
+                <input type="text" class="user-addr2" placeholder="나머지 주소">
+            </div>
+            <div class="sign-btn">
+                <button class="submit-btn button-hover">가입하기</button>
+                <button class="reset-btn button-hover">취소</button>
             </div>
         </div>
     </form>
