@@ -22,6 +22,7 @@
     --font-size-head: 20px;
     --font-size-head2: 18px;
     --font-size-head3: 16px;
+    --font-size-head4: 15px;
     --font-size-main: 14px;
     --font-size-cont: 12px;
 
@@ -43,7 +44,7 @@
     --transition-speed-slow: .8s;
 }
 
-@media(max-width: 600px) {
+@media(max-width: 800px) {
     :root {
         --font-size-logo: 25px;
         --font-size-head: 25px;
@@ -51,5 +52,16 @@
         --font-size-head3: 18px;
         --font-size-main: 18px;
         --font-size-cont: 16px;
+    }
+}
+
+@media(max-width: 470px) {
+    :root {
+        --font-size-logo: 20px;
+        --font-size-head: 18px;
+        --font-size-head2: 16px;
+        --font-size-head3: 14px;
+        --font-size-main: 14px;
+        --font-size-cont: 12px;
     }
 }
