@@ -42,3 +42,14 @@
     --transition-speed-normal: .5s;
     --transition-speed-slow: .8s;
 }
+
+@media(max-width: 600px) {
+    :root {
+        --font-size-logo: 25px;
+        --font-size-head: 25px;
+        --font-size-head2: 20px;
+        --font-size-head3: 18px;
+        --font-size-main: 18px;
+        --font-size-cont: 16px;
+    }
+}
