@@ -35,8 +35,8 @@ body {
 
     position: absolute;
     /* top: calc(50% - 325px); ===============*/
-    /* top: calc(50% - 325px); */
-    top: -1500px;
+    top: calc(50% - 325px);
+    /* top: -1500px; */
     left: calc(50% - 250px);
 
     z-index: 1;
@@ -393,7 +393,8 @@ body {
         height: 100vh;
 
         /* top: 0; ================== */
-        top: -1500px;
+        top: 0;
+        /* top: -1500px; */
         left: 0;
 
         padding: 0 10px;
