@@ -34,7 +34,9 @@ body {
     justify-content: space-evenly;
 
     position: absolute;
-    top: calc(50% - 325px);
+    /* top: calc(50% - 325px); ===============*/
+    /* top: calc(50% - 325px); */
+    top: -1500px;
     left: calc(50% - 250px);
 
     z-index: 1;
@@ -164,10 +166,10 @@ body {
 /* terms agree or back button */
 .button {
     border: none;
-    cursor: pointer;
     height: 35px;
 
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .button:disabled {
@@ -200,24 +202,41 @@ body {
     width: 600px;
     height: 650px;
 
+    border-radius: 20px;
+
     position: relative;
     left: 0;
     top: 0;
     background-color: #fff;
 }
 
+.user-info .chk-text {
+    display: flex;
+    justify-content: flex-start;
+
+    width: 100%;
+    margin-left: 50px;
+    font-size: var(--font-size-cont);
+
+    color: var(--color-gray);
+}
+
+.user-info .chk-text span {
+    margin-right: 15px;
+    stroke: var(--color-gray);
+}
+
 .user-info .info-name {
-    width: 200px;
+    display: flex;
+    align-items: flex-end;
+
+    width: 300px;
     height: 35px;
 
-    margin-left: 50px;
+    margin-left: 45px;
     padding-left: 10px;
-    line-height: 35px;
 
-    border-left: 10px solid var(--color-red);
-    border-radius: 5px;
-
-    font-size: var(--font-size-head4);
+    font-size: var(--font-size-cont);
     color: #333;
 }
 
@@ -237,12 +256,9 @@ body {
 
 .user-info div input {
     border: none;
-    background-color: #f3f3f3;
+    border-bottom: 1px solid var(--color-gray);
 
     height: 35px;
-    border-radius: 3px;
-
-    text-align: center;
 }
 
 .user-info div input:focus {
@@ -252,7 +268,20 @@ body {
 /* id */
 .info-box1 .user-id {
     width: 200px;
+    margin-right: 10px;
 }
+
+/* .info-box1 .dupl-chk {
+    width: 100px;
+
+    background-color: #333;
+    color: #fff;
+
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+} dupl chk button ========== */
 
 /* password */
 .info-box2 {
@@ -264,7 +293,7 @@ body {
     height: 35px;
 }
 
-.info-box2 .user-pwd1 {
+.info-box2 .user-pwd:first-child {
     margin-right: 10px;
 }
 
@@ -280,20 +309,34 @@ body {
 
 .info-box4 select {
     width: 80px;
-    height: 35px;
+    height: 38px;
 
     border: none;
+    border-bottom: 1px solid var(--color-gray);
 
-    background-color: #f3f3f3;
+
+}
+
+.info-box4 select:focus {
+    outline: none;
+}
+
+.info-box4 select option {
+    background-color: var(--color-red);
+    color: #fff;
+    border: none;
 }
 
 .info-box4 input {
-    width: 130px;
+    width: 80px;
     margin-left: 10px;
+
+    text-align: center;
 }
 
-.info-box4 .user-phone1 {
-    width: 100px;
+.info-box4 .user-phone:nth-child(2) {
+    width: 50px;
+    margin-left: 20px;
 }
 
 /* addr */
@@ -349,7 +392,8 @@ body {
         width: calc(100vw - 20px);
         height: 100vh;
 
-        top: 0;
+        /* top: 0; ================== */
+        top: -1500px;
         left: 0;
 
         padding: 0 10px;
@@ -396,6 +440,17 @@ body {
     .user-info {
         width: 100vw;
         height: 100vh;
+
+        border-radius: 0;
+    }
+
+    /* check test */
+    .user-info .chk-text {
+        display: flex;
+        flex-wrap: wrap;
+
+        margin-left: 20px;
+        width: 200px;
     }
 
     .user-info .info-name {
@@ -430,6 +485,10 @@ body {
         width: 230px;
     }
 
+    /* .info-box1 .dupl-chk {
+        width: 60px;
+    } dupl chk btn ========== */
+
     /* password */
     .info-box2 {
         justify-content: space-evenly;
@@ -441,6 +500,10 @@ body {
 
     .info-box2 .user-pwd1 {
         margin: 0 10px 10px 0;
+    }
+
+    .info-box2 .user-pwd2 {
+        margin-top: 10px;
     }
 
     /* name */
@@ -456,10 +519,15 @@ body {
     .info-box4 select {
         width: 50px;
 
-        margin: 10px 150px 0 0;
+        margin: 10px 100% 0 0;
         border: none;
+        border-bottom: 1px solid var(--color-gray);
+    }
 
-        background-color: #f3f3f3;
+    .info-box4 select option {
+        background-color: var(--color-red);
+        color: #fff;
+        border: none;
     }
 
     .info-box4 input {
