@@ -1,3 +1,7 @@
+body {
+    cursor: default;
+}
+
 :root {
     /* color */
     --color-white: #fff;
