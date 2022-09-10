@@ -96,7 +96,7 @@
             <p class="info-name">아이디</p>
             <!-- id check -->
             <div class="info-box1">
-                <input type="text" class="user-id" placeholder="아이디" maxlength="8">
+                <input type="text" class="user-id" placeholder="아이디" maxlength="12">
                 <!-- <button type="button" class="dupl-chk button-hover">중복
                     확인</button> -->
             </div>
@@ -116,7 +116,7 @@
                             transform="translate(0.677 1.969)" fill="none" stroke-linecap="round"
                             stroke-linejoin="round" stroke-width="1" />
                     </svg>
-                    4 ~ 8자 제한
+                    4 ~ 12자 제한
                 </span>
             </p>
             <!-- password input -->
@@ -124,6 +124,19 @@
             <!-- password check -->
             <div class="info-box2">
                 <input type="password" class="user-pwd" placeholder="비밀번호" maxlength="16">
+                <input type="checkbox" id="pwd-text">
+                <label for="pwd-text">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="7" viewBox="0 0 15 7">
+                        <g data-name="패스 1" fill="none">
+                            <path
+                                d="M 7.5 1 C 4.931632041931152 1 2.638708114624023 2.562924861907959 1.493247985839844 3.501657485961914 C 2.635217666625977 4.44077205657959 4.919943809509277 6 7.5 6 C 10.06836795806885 6 12.36129188537598 4.437074661254883 13.50675201416016 3.498342514038086 C 12.36478233337402 2.55922794342041 10.08005714416504 1 7.5 1 M 7.5 0 C 11.64213943481445 0 15 3.5 15 3.5 C 15 3.5 11.64213943481445 7 7.5 7 C 3.35785961151123 7 0 3.5 0 3.5 C 0 3.5 3.35785961151123 0 7.5 0 Z"
+                                stroke="none" />
+                        </g>
+                        <g data-name="타원 1" transform="translate(5 1)" fill="none" stroke-width="1">
+                            <circle cx="2.5" cy="2.5" r="2" fill="none" />
+                        </g>
+                    </svg>
+                </label>
                 <input type="password" class="user-pwd2" placeholder="비밀번호 확인" maxlength="16">
             </div>
             <!-- validation -->

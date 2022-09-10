@@ -297,6 +297,32 @@ body {
     margin-right: 10px;
 }
 
+/* password -> text */
+.info-box2 #pwd-text {
+    display: none;
+}
+
+.info-box2 label svg {
+    cursor: pointer;
+    margin: 25px 25px 0 -25px;
+}
+
+.info-box2 label svg g {
+    stroke: var(--color-gray);
+}
+
+.info-box2 label svg path {
+    fill: var(--color-gray);
+}
+
+.info-box2 #pwd-text:checked~label svg g {
+    stroke: var(--color-black);
+}
+
+.info-box2 #pwd-text:checked~label svg path {
+    fill: var(--color-black);
+}
+
 /* name */
 .info-box3 .user-name {
     width: 200px;
@@ -451,7 +477,7 @@ body {
         flex-wrap: wrap;
 
         margin-left: 20px;
-        width: 200px;
+        width: 80%;
     }
 
     .user-info .info-name {
@@ -499,8 +525,8 @@ body {
         width: 230px;
     }
 
-    .info-box2 .user-pwd1 {
-        margin: 0 10px 10px 0;
+    .info-box2 .user-pwd {
+        margin: 10px 10px 10px 0;
     }
 
     .info-box2 .user-pwd2 {

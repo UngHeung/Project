@@ -153,10 +153,10 @@ function pwdCheck() {
 
     let pwd = userPwd1.value;
 
-    let chk1 = /[A-Z]*$/;
-    let chk2 = /[a-z]*$/;
-    let chk3 = /[0-9]*$/;
-    let chk4 = /[!@#$%^&*()]*$/;
+    let chk1 = /(?=.*?[A-Z])/;
+    let chk2 = /(?=.*?[a-z])/;
+    let chk3 = /(?=.*?[0-9])/;
+    let chk4 = /(?=.*?[!@#$%^*+=])/;
     let chk5 = /^.{8,16}$/;
 
     if (!chk1.test(pwd)) {
@@ -209,6 +209,25 @@ function pwdCheck() {
     }
 
     return true;
+}
+
+// 비밀번호 텍스트
+let pwdText = document.getElementById("pwd-text");
+pwdText.addEventListener("click", () => {
+    console.log(pwdText.checked);
+    pwdTextChange();
+});
+
+function pwdTextChange() {
+    if (pwdText.checked) {
+        userPwd1.removeAttribute("type");
+        userPwd1.setAttribute("type", "text");
+        console.log(1);
+    } else {
+        userPwd1.removeAttribute("type");
+        userPwd1.setAttribute("type", "password");
+        console.log(2);
+    }
 }
 
 // 비밀번호 확인 체크
