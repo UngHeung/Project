@@ -1,0 +1,117 @@
+@import url(../reset.css);
+@import url(../root.css);
+@import url(../webFont.css);
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+    background-color: var(--color-red);
+}
+
+.content-area-title {
+    font-family: var(--font-logo);
+    font-size: var(--font-size-head);
+}
+
+.title {
+    display: block;
+
+    width: 200px;
+    height: 35px;
+
+    font-size: var(--font-size-cont);
+    line-height: 35px;
+    /* background-color: aquamarine; */
+}
+
+.form {
+    width: 100%;
+}
+
+/* 명소등록 */
+.content-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: calc(600px - 20px);
+    height: calc(800px - 20px);
+    padding: 10px;
+
+    background-color: #fff;
+}
+
+.content-area input {
+    height: 35px;
+    border: none;
+    border-bottom: 1px solid #333;
+}
+
+.content-area input:focus {
+    outline: none;
+}
+
+.content-area-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+
+    margin: 0;
+    /* background-color: greenyellow; */
+}
+
+/* 명소 이름 */
+.form-box1 .local-name-input {
+    width: 150px;
+}
+
+/* 명소 위치 */
+.form-box2 .local-addr-input {
+    width: 250px;
+}
+
+.form-box2 select {
+    height: 35px;
+
+    margin-right: 10px;
+
+    border: none;
+    background-color: #f3f3f3;
+}
+
+.form-box2 select:focus {
+    outline: none;
+}
+
+/* 명소 소개 */
+.form-box3 .content {
+    width: calc(100% - 20px);
+    padding: 10px;
+}
+
+.form-box3 .content:focus {
+    outline: none;
+}
+
+/* 명소 사진 */
+.form-box4 input {
+    border: none;
+}
+
+/* 등록, 취소 버튼 */
+.form-box5 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.button {
+    width: 150px;
+    height: 35px;
+    border-radius: 3px;
+}
+
+@media (max-width: 800px) {}

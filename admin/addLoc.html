@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    <link rel="stylesheet" href="addLoc.css">
+</head>
+
+<body>
+    <article class="content-area">
+        <!--<form method="post" action enctype="multipart/form-data">
+            <input type="hidden" name="" value="~">-->
+        <h1 class="content-area-title">명소등록</h1>
+
+        <!-- 명소 이름 -->
+        <div class="form-box1 form">
+            <label for="name" class="title">명소 이름</label>
+            <input id="name" class="local-name-input" type="text" name="name" placeholder="이름을 입력해주세요" required>
+        </div>
+        <!-- 명소 위치 -->
+        <div class="form-box2 form">
+            <label for="name" class="title">명소 위치</label>
+            <select>
+                <option selected>시/도</option>
+                <option>서울특별시</option>
+                <option>부산광역시</option>
+                <option>전라남도</option>
+                <option>전라북도</option>
+                <option>경상남도</option>
+                <option>경상북도</option>
+            </select>
+            <input id="location" class="local-addr-input" type="text" name="loacation" maxlength="20"
+                placeholder="ㅇㅇ구 ㅁㅁ동">
+        </div>
+
+        <!-- 명소 소개 -->
+        <div class="form-box3 form">
+            <label for="content" class="title">명소 소개</label>
+            <textarea class="content" class="local-info-textarea" cols="50" rows="20" name="content"
+                placeholder="명소에 대해 설명 해주세요"></textarea>
+        </div>
+
+        <div class="form-box4 form">
+            <label for="mainphoto" class="title main">명소 사진 1</label>
+            <input class="local-photo-file main-button" type="file" name="mainphoto" required>
+            <label for="subphoto" class="title sub">명소 사진 2</label>
+            <input class="local-photo-file sub-button" type="file" name="subphoto">
+        </div>
+
+        <div class="form-box5 form">
+            <button type="button" class="submit-button button">등록하기</button>
+            <button type="reset" class="reset-button button">취소하기</button>
+        </div>
+    </article>
+</body>
+
+</html>
