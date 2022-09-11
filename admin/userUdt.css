@@ -1,0 +1,26 @@
+@import url(../reset.css);
+@import url(../root.css);
+@import url(../webFont.css);
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+    background-color: var(--color-red);
+}
+
+.user-info-update {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 600px;
+    height: 800px;
+
+    background-color: #fff;
+
+    border-radius: 20px;
+}
