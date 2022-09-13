@@ -1,0 +1,127 @@
+@import url(../reset.css);
+@import url(../webFont.css);
+@import url(../root.css);
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+    font-size: var(--font-size-cont);
+
+    background-color: var(--color-red);
+}
+
+/* time-table */
+.time-table {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: calc(800px - 20px);
+    padding: 10px;
+
+    background-color: #fff;
+}
+
+/* box color selector */
+.box-color {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100px;
+    height: 15px;
+
+    margin-bottom: 20px;
+}
+
+.box-color input {
+    display: none;
+}
+
+.box-color input:checked+label>span {
+    box-sizing: border-box;
+    border: 2px solid #999;
+}
+
+.box-color>label>span {
+    display: inline-block;
+
+    width: 15px;
+    height: 15px;
+
+    border-radius: 3px;
+
+    cursor: pointer;
+}
+
+.box-color>label>span:hover {
+    box-sizing: border-box;
+    border: 2px solid #333;
+}
+
+.box-color .color-1 {
+    background-color: rgb(255, 196, 196);
+}
+
+.box-color .color-2 {
+    background-color: rgb(253, 249, 166);
+}
+
+.box-color .color-3 {
+    background-color: rgb(146, 254, 177);
+}
+
+.box-color .color-4 {
+    background-color: rgb(128, 225, 240);
+}
+
+.box-color .color-5 {
+    background-color: rgb(233, 173, 255);
+}
+
+/* date bar */
+.date-bar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+
+    left: calc(50% - 400px);
+
+    width: 25px;
+    padding-right: 20px;
+    background-color: #fff;
+}
+
+.date-bar>span {
+    display: inline-block;
+
+    width: 10px;
+    height: 15px;
+
+    box-sizing: border-box;
+    border-bottom: 1px solid #666;
+}
+
+.date-bar>p {
+    display: inline-block;
+
+    width: 10px;
+    height: 15px;
+}
+
+/* time table viewer */
+.time-table-view {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    text-align: center;
+
+    width: calc(800px - 50px);
+    padding-left: 50px;
+}
