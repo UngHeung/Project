@@ -15,5 +15,18 @@
         -   signIn.html
         -   signIn.css
         -   signIn.js
+    -   시간표 페이지
+        -   timetable.html
+        -   timetable.css
+        -   timetable.js
 
--   format_admin
+-   admin
+    -   명소 추가 페이지
+        -   addLoc.html
+        -   addLoc.css
+    -   회원 목록 페이지
+        -   member.html
+        -   member.css
+    -   회원정보 수정 페이지
+        -   userUdt.html
+        -   userUdt.css
