@@ -11,90 +11,192 @@ body {
 
     font-size: var(--font-size-cont);
 
-    background-color: var(--color-red);
+    background-color: #fff;
 }
 
-/* time-table */
+/* ===== time-table ===== */
 .time-table {
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    /* justify-content: center; */
+    flex-wrap: wrap;
 
-    width: calc(800px - 20px);
+    width: calc(1200px - 20px);
+    height: 800px;
     padding: 10px;
 
     background-color: #fff;
 }
 
+/* ===== table header ===== */
+.table-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 100%;
+    height: 60px;
+
+    padding: 10px 0;
+
+    text-align: center;
+
+    border-bottom: 3px solid #f3f3f3;
+}
+
 /* box color selector */
-.box-color {
+.table-header>.box-color {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    width: 100px;
+    width: 150px;
     height: 15px;
 
-    margin-bottom: 20px;
+    font-size: var(--font-size-main);
 }
 
-.box-color input {
+.table-header>.box-color input {
     display: none;
 }
 
-.box-color input:checked+label>span {
+.table-header>.box-color input:checked+label>span {
     box-sizing: border-box;
     border: 2px solid #999;
 }
 
-.box-color>label>span {
+.table-header>.box-color>label>span {
     display: inline-block;
 
     width: 15px;
     height: 15px;
 
     border-radius: 3px;
-
+    font-size: 0;
+    line-height: 0;
     cursor: pointer;
 }
 
-.box-color>label>span:hover {
+.table-header>.box-color>label>span:hover {
     box-sizing: border-box;
     border: 2px solid #333;
 }
 
-.box-color .color-1 {
-    background-color: rgb(255, 196, 196);
+.table-header>.box-color .color-red {
+    background-color: #ffc4c4;
 }
 
-.box-color .color-2 {
-    background-color: rgb(253, 249, 166);
+.table-header>.box-color .color-yellow {
+    background-color: #fdf9a6;
 }
 
-.box-color .color-3 {
-    background-color: rgb(146, 254, 177);
+.table-header>.box-color .color-green {
+    background-color: #92feb1;
 }
 
-.box-color .color-4 {
-    background-color: rgb(128, 225, 240);
+.table-header>.box-color .color-blue {
+    background-color: #80e1f0;
 }
 
-.box-color .color-5 {
-    background-color: rgb(233, 173, 255);
+.table-header>.box-color .color-purple {
+    background-color: #e9adff;
+}
+
+/* time select */
+.table-header>.select-time {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 700px;
+    height: 35px;
+
+    font-size: var(--font-size-main);
+}
+
+.table-header>.select-time>select {
+    border: none;
+    /* border-bottom: 1px solid #333; */
+
+    height: 35px;
+
+    font-size: var(--font-size-head3);
+    font-weight: 600;
+    text-align: center;
+}
+
+.table-header>.select-time>select:focus {
+    outline: none;
+}
+
+.table-header>.select-time>span {
+    padding-right: 10px;
+}
+
+/* input box contents */
+.table-header>.select-time>.box-cont {
+    width: 150px;
+    height: 35px;
+
+    border: none;
+    border-bottom: 1px solid #333;
+}
+
+.table-header>.select-time>.box-cont:focus {
+    outline: none;
+}
+
+/* button */
+.table-header>.button>button {
+    height: 35px;
+
+    border: none;
+    border-radius: 3px;
+
+    cursor: pointer;
+}
+
+.table-header>.button>.add-box {
+    width: 100px;
+    background-color: #fff;
+    color: #333;
+
+    border: 1px solid #333;
+    box-sizing: border-box;
+}
+
+.table-header>.button>.add-box:hover {
+    filter: brightness(90%);
+}
+
+.table-header>.button>.del-box {
+    width: 80px;
+    background-color: #333;
+    color: #fff;
+}
+
+.table-header>.button>.del-box:hover {
+    filter: brightness(130%);
+}
+
+/* ===== table container ===== */
+.table-container {
+    display: flex;
+
+    width: 90%;
 }
 
 /* date bar */
 .date-bar {
     display: flex;
     flex-direction: column;
-    position: absolute;
 
-    left: calc(50% - 400px);
+    bottom: 0px;
 
     width: 25px;
     padding-right: 20px;
     background-color: #fff;
+    /* border: 1px solid #333; */
 }
 
 .date-bar>span {
@@ -117,11 +219,48 @@ body {
 /* time table viewer */
 .time-table-view {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
 
     text-align: center;
 
-    width: calc(800px - 50px);
+    width: calc(100% - 50px);
     padding-left: 50px;
+}
+
+.time-table-view>.weeks {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    /* flex-direction: column; */
+
+    width: 150px;
+    height: 100%;
+}
+
+.time-table-view>.weeks>label {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 120px;
+
+    border-radius: 5px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #fff;
+
+    font-family: var(--font-sub);
+    font-size: var(--font-size-main);
+    color: #333;
+
+    text-align: center;
+}
+
+.time-table-view>.weeks>label:last-child {
+    border: none;
+}
+
+.time-table-view>.weeks>.box:checked+label {
+    border: 3px solid var(--color-red);
+    /* filter: brightness(95%); */
 }

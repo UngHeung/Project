@@ -61,10 +61,11 @@ minuteSelect.addEventListener("change", () => {
     minuteSelectVal = parseInt(minuteSelect.value);
 });
 
-console.log(hourSelectVal, minuteSelectVal);
-
 // 버튼
-const addBtn = document.querySelector(".add-box");
+const addColor = document.querySelectorAll(".radio-color"); // 박스 색상
+const addBoxCont = document.querySelector(".box-cont");
+const addBtn = document.querySelector(".add-box"); // 박스 추가
+const delBtn = document.querySelector(".del-box"); // 박스 삭제
 
 let width;
 let height;
@@ -79,23 +80,35 @@ const day5 = document.querySelector(".day-5");
 const day6 = document.querySelector(".day-6");
 const day7 = document.querySelector(".day-7");
 
-console.log(day1, day2);
+/* 박스 색상 가져오기 */
+let colorSet = "#ffc4c4"; // 처음 색상
+for (let i = 0; i < addColor.length; i++) {
+    addColor[i].addEventListener("click", () => {
+        if ((addColor[i].checked = true)) {
+            colorSet = addColor[i].innerText;
+        }
+    });
+}
 
+/* 박스 추가 */
 function addBox() {
     width = 80;
-    height = hourSelectVal * 60 + minuteSelectVal;
+    height = hourSelectVal * 30 + minuteSelectVal;
     day = dateSelectVal;
 
     let timeBox = document.createElement("input");
     let timeBoxLabel = document.createElement("label");
 
-    timeBox.setAttribute("id", `box-${countBox} box`);
+    timeBox.setAttribute("type", "checkbox");
+    timeBox.setAttribute("id", `box-${countBox}`);
+    timeBox.setAttribute("class", "box");
     timeBox.style.display = "none";
-    timeBoxLabel.setAttribute("for", `box-${countBox} box`);
-    timeBoxLabel.style.display = "inline-block";
-    timeBoxLabel.style.width = `${width}px`;
+    timeBoxLabel.setAttribute("for", `box-${countBox}`);
+    // timeBoxLabel.style.display = "inline-block";
+    // timeBoxLabel.style.width = `${width}px`;
     timeBoxLabel.style.height = `${height}px`;
-    timeBoxLabel.style.backgroundColor = "#333";
+    timeBoxLabel.style.backgroundColor = `${colorSet}`;
+    timeBoxLabel.innerHTML = `${addBoxCont.value}`;
 
     if (day == "1") {
         day1.appendChild(timeBox);
@@ -130,5 +143,5 @@ addBtn.addEventListener("click", () => {
         return false;
     }
     addBox();
-    console.log(width, height, countBox);
+    addBoxCont.value = "";
 });

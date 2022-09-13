@@ -11,54 +11,63 @@
 
 <body>
     <div class="time-table">
-        <!-- select box color -->
-        <div class="box-color">
-            <input type="radio" id="color-1" name="color-select" checked></input>
-            <label for="color-1"><span class="color-1"></span></label>
-            <input type="radio" id="color-2" name="color-select"></input>
-            <label for="color-2"><span class="color-2"></span></label>
-            <input type="radio" id="color-3" name="color-select"></input>
-            <label for="color-3"><span class="color-3"></span></label>
-            <input type="radio" id="color-4" name="color-select"></input>
-            <label for="color-4"><span class="color-4"></span></label>
-            <input type="radio" id="color-5" name="color-select"></input>
-            <label for="color-5"><span class="color-5"></span></label>
-        </div>
+        <div class="table-header">
+            <!-- select box color -->
+            <div class="box-color">
+                <input type="radio" id="color-1" name="color-select" checked>
+                <label for="color-1"><span class="color-red radio-color">#ffc4c4</span></label>
+                <input type="radio" id="color-2" name="color-select">
+                <label for="color-2"><span class="color-yellow radio-color">#fdf9a6</span></label>
+                <input type="radio" id="color-3" name="color-select">
+                <label for="color-3"><span class="color-green radio-color">#92feb1</span></label>
+                <input type="radio" id="color-4" name="color-select">
+                <label for="color-4"><span class="color-blue radio-color">#80e1f0</span></label>
+                <input type="radio" id="color-5" name="color-select">
+                <label for="color-5"><span class="color-purple radio-color">#e9adff</span></label>
+            </div>
 
-        <!-- select date -->
-        <div class="select-time">
-            <select name="date" id="time-date">
-                <option value="none">선택</option>
-            </select>
-            <span>일</span>
-            <select name="hour" id="time-hour">
-                <option value="0">0</option>
-                <option value="1" selected>1</option>
-            </select>
-            <span>시간</span>
-            <!-- select minute -->
-            <select name="minute" id="time-minute">
-                <option value="0">0분</option>
-                <option value="15">30분</option>
-            </select>
-            <span>분</span>
+            <!-- select date -->
+            <div class="select-time">
+                <select name="date" id="time-date">
+                    <option value="none">선택</option>
+                </select>
+                <span>일차</span>
+                <select name="hour" id="time-hour">
+                    <option value="0">0</option>
+                    <option value="1" selected>1</option>
+                </select>
+                <span>시간</span>
+                <!-- select minute -->
+                <select name="minute" id="time-minute">
+                    <option value="0">0</option>
+                    <option value="15">30</option>
+                </select>
+                <span>분</span>
+                <!-- add box contents -->
+                <span>내 용 :</span>
+                <input type="text" class="box-cont" maxlength="10" placeholder="최대 10자까지 가능">
+            </div>
             <!-- add box button -->
-            <button class="add-box">추가</button>
+            <div class="button">
+                <button class="add-box">추가</button>
+                <button class="del-box">삭제</button>
+            </div>
         </div>
 
-        <!-- date bar -->
-        <div class="date-bar">
-        </div>
+        <div class="table-container">
+            <!-- date bar -->
+            <div class="date-bar"></div>
 
-        <!-- time table viewer -->
-        <div class="time-table-view">
-            <div class="weeks day-1">1</div>
-            <div class="weeks day-2">2</div>
-            <div class="weeks day-3">3</div>
-            <div class="weeks day-4">4</div>
-            <div class="weeks day-5">5</div>
-            <div class="weeks day-6">6</div>
-            <div class="weeks day-7">7</div>
+            <!-- time table viewer -->
+            <div class="time-table-view">
+                <div class="weeks day-1"></div>
+                <div class="weeks day-2"></div>
+                <div class="weeks day-3"></div>
+                <div class="weeks day-4"></div>
+                <div class="weeks day-5"></div>
+                <div class="weeks day-6"></div>
+                <div class="weeks day-7"></div>
+            </div>
         </div>
     </div>
 
