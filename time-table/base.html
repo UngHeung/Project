@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행갈땐? 기억하자!</title>
+    <link rel="stylesheet" href="base.css">
+</head>
+
+<body>
+    <!-- header : logo, user-log -->
+    <header>
+        <!-- menu button area -->
+        <div class="menu-btn-area"></div>
+        <!-- logo -->
+        <div class="logo typing">
+            <p class="logo-text"></p>
+        </div>
+        <!-- sign in, login -->
+        <div class="user-log">
+            <p>회원가입</p>
+            |
+            <p>로그인</p>
+        </div>
+    </header>
+    <!-- container menu, main, sub content -->
+    <article class="container">
+        <section class="cont-menu">
+            <!-- menu button -->
+            <input id="menu-btn" type="checkbox" checked>
+            <label for="menu-btn" class="menu-btn">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="14" viewBox="0 0 17 14">
+                        <g id="그룹_1" data-name="그룹 1" transform="translate(-3.645 -5.5)">
+                            <line id="line1" data-name="선1" x2="15" transform="translate(4.645 6.5)" fill="none"
+                                stroke="#333" stroke-linecap="round" stroke-width="2" />
+                            <line id="line2" data-name="선2" x2="15" transform="translate(4.645 12.5)" fill="none"
+                                stroke="#333" stroke-linecap="round" stroke-width="2" />
+                            <line id="line3" data-name="선3" x2="15" transform="translate(4.645 18.5)" fill="none"
+                                stroke="#333" stroke-linecap="round" stroke-width="2" />
+                        </g>
+                    </svg>
+                </div>
+            </label>
+            <nav class="menu">
+                <ul>
+                    <li>
+                        <div class="icon">
+                            <!-- icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                            </svg>
+                        </div>
+                        <!-- menu list 1 -->
+                        <p>내 정보</p>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M6 1v3H1V1h5zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12v3h-5v-3h5zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8v7H1V8h5zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6v7h-5V1h5zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z" />
+                            </svg>
+                        </div>
+                        <!-- menu list 2 -->
+                        <p>여행 시간표</p>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5ZM1 14V4h14v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1Zm7-6.507c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
+                            </svg>
+                        </div>
+                        <!-- menu list 3 -->
+                        <p>동행 찾기</p>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z" />
+                            </svg>
+                        </div>
+                        <!-- menu list 4 -->
+                        <p>지도 보기</p>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z" />
+                                <path
+                                    d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z" />
+                            </svg>
+                        </div>
+                        <!-- menu list 5 -->
+                        <p>기억해줘!</p>
+                    </li>
+                </ul>
+                <!-- about : company(footer) -->
+                <div class="company">
+
+                </div>
+            </nav>
+        </section>
+        <!-- main content -->
+        <section class="cont-main">
+            <div class="time-table">
+                <div class="table-header">
+                    <!-- select box color -->
+                    <div class="box-color">
+                        <input type="radio" id="color-1" name="color-select" checked>
+                        <label for="color-1"><span class="color-red radio-color">#ffc4c4</span></label>
+                        <input type="radio" id="color-2" name="color-select">
+                        <label for="color-2"><span class="color-yellow radio-color">#fdf9a6</span></label>
+                        <input type="radio" id="color-3" name="color-select">
+                        <label for="color-3"><span class="color-green radio-color">#92feb1</span></label>
+                        <input type="radio" id="color-4" name="color-select">
+                        <label for="color-4"><span class="color-blue radio-color">#80e1f0</span></label>
+                        <input type="radio" id="color-5" name="color-select">
+                        <label for="color-5"><span class="color-purple radio-color">#e9adff</span></label>
+                    </div>
+
+                    <!-- select date -->
+                    <div class="select-time">
+                        <select name="date" id="time-date">
+                            <option value="none">선택</option>
+                        </select>
+                        <span>일차</span>
+                        <select name="hour" id="time-hour">
+                            <option value="0">0</option>
+                            <option value="1" selected>1</option>
+                        </select>
+                        <span>시간</span>
+                        <!-- select minute -->
+                        <select name="minute" id="time-minute">
+                            <option value="0">0</option>
+                            <option value="15">30</option>
+                        </select>
+                        <span>분</span>
+                        <!-- add box contents -->
+                        <span>내 용 :</span>
+                        <input type="text" class="box-cont" maxlength="10" placeholder="최대 10자까지 가능">
+                    </div>
+                    <!-- add box button -->
+                    <div class="button">
+                        <button class="add-box">추가</button>
+                        <button class="del-box">삭제</button>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <!-- date bar -->
+                    <div class="date-bar"></div>
+
+                    <!-- time table viewer -->
+                    <div class="time-table-view">
+                        <div class="weeks day-1"></div>
+                        <div class="weeks day-2"></div>
+                        <div class="weeks day-3"></div>
+                        <div class="weeks day-4"></div>
+                        <div class="weeks day-5"></div>
+                        <div class="weeks day-6"></div>
+                        <div class="weeks day-7"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- sub content -->
+        <section class="cont-sub">
+
+        </section>
+    </article>
+</body>
+<!-- script load -->
+<script src="base.js"></script>
+<script src="timetable.js"></script>
+
+</html>
