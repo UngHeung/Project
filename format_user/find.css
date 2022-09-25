@@ -17,7 +17,8 @@ body {
     justify-content: center;
     align-items: center;
 
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
     height: 600px;
     padding: 30px;
     border-radius: 20px;
@@ -42,7 +43,8 @@ body {
 
 .select_id_pw {
     display: flex;
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
     height: 50px;
 }
 
@@ -57,7 +59,7 @@ body {
 
     background-color: #f3f3f3;
 
-    border-bottom: 1px solid #333;
+    border-bottom: 2px solid #333;
     cursor: pointer;
 }
 
@@ -77,21 +79,30 @@ body {
 }
 
 .input_box {
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
     height: 450px;
 
     box-sizing: border-box;
-    border: 1px solid #333;
+    border: 2px solid #333;
     border-top: none;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
 
 .input_box>form {
-    width: 100%;
+    width: calc(100% - 30px);
     height: 100%;
     display: none;
     border-radius: 20px;
+    padding-left: 30px;
+}
+
+#member_email {
+    height: 35px;
+    border: none;
+
+    background-color: #f3f3f3;
 }
 
 /* radio button checked */
@@ -100,7 +111,7 @@ body {
     background-color: #fff;
 
     box-sizing: border-box;
-    border: 1px solid #333;
+    border: 2px solid #333;
     border-bottom: none;
 }
 
@@ -109,6 +120,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: flex-start;
+
 }
 
 #find_id_check:checked~.input_box>.find_pw,
@@ -117,17 +130,64 @@ body {
 }
 
 /* input & button */
+.button_box {
+    width: calc(100% - 30px);
+    text-align: center;
+}
+
+.button_submit,
+.button_cancel,
+.input_find {
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+}
+
+.button_submit:focus,
+.button_cancel:focus,
+.input_find:focus {
+    outline: none;
+}
+
+.certification {
+    display: inline-block;
+    margin: 20px 0 0 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.certification:hover {
+    text-decoration: underline;
+}
+
+.button_submit:hover {
+    filter: brightness(120%);
+    cursor: pointer;
+}
+
+.button_cancel:hover {
+    filter: brightness(90%);
+    cursor: pointer;
+}
+
 .button_submit {
     width: 100px;
     height: 35px;
+    background-color: #333;
+    color: #fff;
 }
 
 .button_cancel {
     width: 80px;
     height: 35px;
+    background-color: #fff;
+    border: 2px solid #333;
+    box-sizing: border-box;
 }
 
 .input_find {
     width: 150px;
     height: 35px;
+    margin-top: 10px;
+    background-color: #f3f3f3;
 }
