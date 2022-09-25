@@ -1,0 +1,133 @@
+@import url(../reset.css);
+@import url(../webFont.css);
+@import url(../root.css);
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+/* ===== find id, password ===== */
+.find_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 600px;
+    height: 600px;
+    padding: 30px;
+    border-radius: 20px;
+    /* box-shadow: 1px 1px 3px #333; */
+}
+
+/* title */
+.find_info_title {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-family: var(--font-logo);
+    font-size: 20px;
+}
+
+/* radio button */
+#find_id_check,
+#find_pw_check {
+    display: none;
+}
+
+.select_id_pw {
+    display: flex;
+    width: 500px;
+    height: 50px;
+}
+
+.select_id_pw>label {
+    display: block;
+    width: 250px;
+    height: 50px;
+
+    font-size: 12px;
+    text-align: center;
+    line-height: 50px;
+
+    background-color: #f3f3f3;
+
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+}
+
+/* find id, pass label hover */
+.select_id_pw>label:hover {
+    filter: brightness(90%);
+}
+
+/* find id */
+.select_id_pw>label:first-child {
+    border-top-left-radius: 20px;
+}
+
+/* find password */
+.select_id_pw>label:last-child {
+    border-top-right-radius: 20px;
+}
+
+.input_box {
+    width: 500px;
+    height: 450px;
+
+    box-sizing: border-box;
+    border: 1px solid #333;
+    border-top: none;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.input_box>form {
+    width: 100%;
+    height: 100%;
+    display: none;
+    border-radius: 20px;
+}
+
+/* radio button checked */
+#find_id_check:checked~.select_id_pw>label:first-child,
+#find_pw_check:checked~.select_id_pw>label:last-child {
+    background-color: #fff;
+
+    box-sizing: border-box;
+    border: 1px solid #333;
+    border-bottom: none;
+}
+
+#find_id_check:checked~.input_box>.find_id,
+#find_pw_check:checked~.input_box>.find_pw {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#find_id_check:checked~.input_box>.find_pw,
+#find_pw_check:checked~.input_bpx>.find_id {
+    display: none;
+}
+
+/* input & button */
+.button_submit {
+    width: 100px;
+    height: 35px;
+}
+
+.button_cancel {
+    width: 80px;
+    height: 35px;
+}
+
+.input_find {
+    width: 150px;
+    height: 35px;
+}

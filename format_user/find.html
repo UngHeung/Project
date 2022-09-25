@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디/비밀번호 찾기</title>
+    <link rel="stylesheet" href="find.css">
+</head>
+
+<body>
+    <div class="find_info">
+        <h1 class="find_info_title">아이디 / 비밀번호 찾기</h1>
+
+        <!-- find id, pass select radio button -->
+        <input type="radio" id="find_id_check" name="find" checked>
+        <input type="radio" id="find_pw_check" name="find">
+
+        <!-- label for radio button -->
+        <div class="select_id_pw">
+            <label for="find_id_check">아이디 찾기</label>
+            <label for="find_pw_check">비밀번호 찾기</label>
+        </div>
+
+        <!-- member inform input form : find id, password -->
+        <div class="input_box">
+            <!-- find id -->
+            <form class="find_id">
+                <div class="input_member_name">
+                    <input class="input_find" type="text" placeholder="이름">
+                </div>
+                <div class="input_member_email">
+                    <input class="input_find" type="text">
+                    @
+                    <select name="member_email" id="member_email">
+                        <option value="naver.com">naver.com</option>
+                        <option value="daum.net">daum.net</option>
+                        <option value="nate.com">nate.com</option>
+                        <option value="gmail.com">gmail.com</option>
+                    </select>
+                </div>
+                <!-- button -->
+                <div class="button_box">
+                    <input class="button_submit" type="submit" value="찾기">
+                    <input class="button_cancel" type="reset" value="취소">
+                </div>
+            </form>
+            <!-- find password -->
+            <form class="find_pw">
+                <div class="input_member_name">
+                    <input class="input_find" type="text" placeholder="이름">
+                </div>
+                <div class="input_member_id">
+                    <input class="input_find" type="text" placeholder="아이디">
+                </div>
+                <div class="input_member_email">
+                    <input class="input_find" type="text">
+                    @
+                    <select name="member_email" id="member_email">
+                        <option value="naver.com">naver.com</option>
+                        <option value="daum.net">daum.net</option>
+                        <option value="nate.com">nate.com</option>
+                        <option value="gmail.com">gmail.com</option>
+                    </select>
+                </div>
+                <!-- button -->
+                <div class="button_box">
+                    <input class="button_submit" type="submit" value="찾기">
+                    <input class="button_cancel" type="reset" value="취소">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
