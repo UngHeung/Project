@@ -1,5 +1,8 @@
 body {
     cursor: default;
+
+    font-family: var(--font-main);
+    font-size: var(--font-size-cont);
 }
 
 :root {
