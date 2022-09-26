@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .viewport {
+            width: 100vw;
+            height: 100vh;
+            transition: .3s;
+        }
+
+
+        .back_img {
+            width: 100%;
+            height: 100%;
+            background-image: url(../images/main_img.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position-y: -10px;
+        }
+
+        .content {
+            height: 800px;
+            display: none;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="screen">
+        <div class="viewport">
+            <div class="back_img back_main"></div>
+        </div>
+        <div class="content">
+
+        </div>
+    </div>
+</body>
+
+<script>
+    let viewport = document.querySelector('.viewport');
+    let back_img = document.querySelector('.back_img');
+    let content = document.querySelector('.content');
+
+    window.addEventListener("wheel", (e) => {
+        console.log(e.deltaY);
+        if (e.deltaY > 0) {
+            viewport.style.height = '400px';
+            back_img.style.backgroundPositionY = '-650px';
+            content.style.display = 'block';
+
+            return;
+        }
+        if (e.deltaY < 0) {
+            viewport.style.height = '100vh';
+            back_img.style.backgroundPositionY = '-10px';
+
+            content.style.display = 'none'
+            return
+        }
+    });
+
+
+    /*
+    screen.addEventListener('mousewheel', () => {
+        console.log(winY);
+        if (fullscreen) {
+            viewport.style.height = '400px';
+            back_img.style.backgroundPositionY = '-650px';
+            screen.style.overflow = "auto";
+            fullscreen = false;
+            return
+        }
+        if (!fullscreen) {
+            viewport.style.height = '100vh';
+            back_img.style.backgroundPositionY = '-10px';
+            screen.style.overflow = "hidden";
+            fullscreen = true;
+            return
+        }
+    });*/
+</script>
+
+</html>
