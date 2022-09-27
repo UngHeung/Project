@@ -1,7 +1,7 @@
 //JavaScript is very flexible
 //flexible === dangerous
 //added EXMAScript 5;
-'use strict'; //자바스크립트 엔진을 좀 더 효율적이고 실용적으로 그리고 안정적으로 사용할 수 있다.
+"use strict"; //자바스크립트 엔진을 좀 더 효율적이고 실용적으로 그리고 안정적으로 사용할 수 있다.
 //ex) console에서 선언되지않은 변수도 error를 내지않고 출력하는 것을 방지해준다
 
 // ===== LOGO text change =====
@@ -51,9 +51,9 @@ logoChange();
 //===== change full screen =====
 
 let viewport = document.querySelector(".viewport");
-let banner_viewport = document.querySelector(".banner_viewport");
+let banner = document.querySelector(".banner");
 let search_box = document.querySelector(".search_box");
-let main_sub_page = document.querySelector(".main_sub_page");
+let sub_content = document.querySelector(".sub_content");
 let header = document.querySelector(".header");
 
 window.addEventListener("wheel", (e) => {
@@ -62,17 +62,17 @@ window.addEventListener("wheel", (e) => {
         /*1.창올라가게 (viewport줄었어)
         2.내용이올라와
         3.*/
-        viewport.style.height = "400px";
-        banner_viewport.style.backgroundPositionY = "-530px";
-        search_box.style.top = "calc(100px + 300px/2 - 62px/2)";
-        header.style.top = "400px";
-        main_sub_page.style.display = "block";
+        viewport.style.height = "300px";
+        banner.style.backgroundPositionY = "-700px";
+        search_box.style.top = "calc(100px + 200px/2 - 62px/2)";
+        header.style.top = "300px";
+        sub_content.style.display = "block";
         return;
     }
     if (e.deltaY < 0) {
         viewport.style.height = "100vh";
-        banner_viewport.style.backgroundPositionY = "-10px";
-        main_sub_page.style.display = "none";
+        banner.style.backgroundPositionY = "-390px";
+        sub_content.style.display = "none";
         search_box.style.top = "calc(100vh/2 - 62px/2)";
         return;
     }

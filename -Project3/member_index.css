@@ -1,298 +1,486 @@
-@import url(./reset.css);
-@import url(./webFont.css);
-@import url(./root.css);
+@import url(reset.css);
+@import url(webFont.css);
+@import url(root.css);
 
 body {
-    font-family: var(--font-main);
+    font-family: var(--font-content);
 }
 
-.navigation_box {
-    width: 100vw;
-    height: 100px;
-    background-color: rgba(0, 0, 0, 0.2);
+::-webkit-scrollbar {
+    width: 0;
+}
+
+/* scrollbar 없앰 */
+
+/*
+    === 클래스 선택자 ===
+    클래스명 클래스명 : 자손들 중에서 찾음 
+    클래스명>클래스명 : 바로 아래의 자식 중에서 찾음
+    클래스명~클래스명 : 나중에 선언된 형제중에서 찾음
+
+    공통 : 같은 부모 아래에 있어야함
+
+    === 스타일 속성명 ===
+    속성명 안에는
+    속성명-세부속성 들이 다들어있음
+
+    예)
+    background
+    background-color
+    background-size
+    background-repeat
+    background-image ...
+
+    background: url(이미지링크) no-repeat;
+    background-image: url(링크);
+    background-repeat : no-repeat;
+
+    세부속성이 없으면 모든 세부속성을 한번에 줄 수 있고
+    세부속성을 쓰면 해당 속성만 골라서 효과를 줄 수도 있음
+*/
+
+
+/* ===== header (logo, menu, status), main page (banner & search) ===== */
+.header>.navigation_box {
     display: flex;
     justify-content: center;
-    position: absolute;
+
+    position: fixed;
     top: 0;
+
+    width: 100vw;
+    height: 100px;
+
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
-.navigation_menu {
-    width: 1200px;
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
-    color: #fff;
-    font-weight: 600;
-    font-size: 16px;
-}
-.navigation_menu_list > li {
-    cursor: pointer;
-}
-
-.logo_box {
-    width: 150px;
-    height: 100px;
-    /* background-color: yellow; */
+/* header logo ===== */
+.header .logo_box {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: var(--font-logo);
+
+    width: 150px;
+    height: 100px;
+
+    font-family: var(--font-logo-title);
     font-size: 30px;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
     color: white;
+    text-shadow: var(--color-shadow);
 }
-.logo_box::after {
+
+/* 로고 텍스트 뒷부분에 "|"를 입력 */
+.header .logo_box::after {
     content: "|";
     animation: none;
 }
-.change_logo.logo_box::after {
+
+/* 해당 클래스가 추가될 경우 blink 애니메이션 적용 */
+/* .logo_box에 추가 */
+.header .change_logo::after {
     animation: blink 0.5s step-end infinite;
 }
 
+/* blink 애니메이션 */
 @keyframes blink {
-    /*blink 임의임*/
+
     0% {
         opacity: 1;
     }
+
     49% {
         opacity: 1;
     }
+
     50% {
         opacity: 0;
     }
+
     100% {
         opacity: 0;
     }
 }
 
-.menu_box {
+/*
+    width 100vw -> 화면 좌우를 모두 차지하고
+    flex -> 자식 태그를 가운데 정렬함
+    absolute -> 주어서 다른 태그의 위치에 영향을 받지 않음
+*/
+
+/* main menu ===== */
+.header .navigation_bar {
+    display: flex;
+    justify-content: space-between;
+
+    width: 1200px;
+    height: 100px;
+
+    font-size: var(--font-size-menu);
+    text-shadow: var(--color-shadow);
+    color: #fff;
+}
+
+/*
+    width를 1200px로 설정하여서 가운데로 정렬되면서
+    자식 태그들이 1200px을 넘지 않도록 함
+    flex 속성으로 로고, 메인 메뉴, 유저상태를 정렬
+    ~shadow: x값 y값 크기 색 값으로 설정
+    rgba(0 ~ 255, 0 ~ 255, 0 ~ 255, 투명도)
+    rgba로만 투명도 지정 가능
+*/
+
+.header .menu_box {
     width: 600px;
     height: 100px;
-    /*background-color: beige;*/
 }
 
-.menu_box > ul {
-    width: 100%;
-
+.header .menu_box>.navigation_menu_list {
     display: flex;
-    justify-content: space-around;
-    height: 100%;
+    justify-content: space-evenly;
     align-items: center;
+
+    width: 100%;
+    height: 100%;
 }
 
-.menu_box > ul > li {
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+/* .header 자손중 .navigation_menu_list의 자식 li 선택 */
+.header .menu_box>.navigation_menu_list>li {
+    font-weight: 600;
+    text-shadow: var(--color-shadow);
+
+    transition: font-size .3s ease-in-out;
     cursor: pointer;
-    transform: scale(1); /*default*/
-    transition: all 0.3s ease-in-out 0; /*부드러운모션을위해추가*/
-}
-.menu_box > ul > li:hover {
-    transform: scale(1.1);
 }
 
-/*홍길동입니당*/
-.member_info {
+/* 
+    transition: 속성명
+    해당 속성에만 transition을 줄 수 있음
+    (transition-property)
+*/
+
+.header .navigation_menu_list>li:hover {
+    text-decoration: underline;
+}
+
+/* header user status (홍길동) ===== */
+.header .member_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
     width: 150px;
     height: 100px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-
-    align-items: center;
 }
-/*체크박스*/
-#member_menu {
+
+/* input type="checkbox" */
+.header .member_info>#member_menu {
     display: none;
 }
-#member_menu:checked ~ .member_menu > .member_ok {
-    /*체크박스클릭시 member_ok나오게*/
-    display: flex;
-}
-.member_menu {
-    position: absolute;
-    top: 100px;
-    width: 100px;
-}
-.member_menu > ul {
-    background-repeat: no-repeat;
-    padding-top: 5px;
-    font-size: 12px;
-}
-.member_menu > ul > li {
-    cursor: pointer;
-}
-.member_ok {
-    height: 135px;
-    background-image: url(member_ok.png);
 
-    display: none;
+/* 
+    #member_menu의 체크박스가 체크될 경우
+    member_ok 태그의 opacity 속성이 0에서 1로 바뀜
+    opacity속성은 투명도 0 ~ 1 사이에서 설정 가능 
+*/
 
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+.header .member_info>#member_menu:checked~.member_menu>.member_ok {
+    opacity: 1;
 }
 
-.member_nok {
-    height: 100px;
-    display: none;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    background-image: url(member_nok.png);
-}
+/*
+    input type="checkbox"로 선언 후 id값을 주면
+    label의 for="id값"으로 연결할 수 있음
+    연결되면 label태그(혹은 그 안의 태그들)를 클릭할 경우
+    input 태그 자체의 checkbox가 체크되거나 체크해제됨
 
-.member_image {
+    이를 이용해 label에 다른 이미지 혹은 태그를 넣어서
+    input 태그 대신에 사용자가 원하는 모양의 체크박스를 쓸 수 있음
+    
+    input 태그의 display 속성을 none으로 준 이유는
+    label 태그로 체크박스를 대신하기 때문에 input 태그 체크박스는
+    쓸 일이 없으므로 눈에 보이지 않으며, 자리도 차지하지 않도록 하기 위함
+
+    :checked 는 체크박스가 체크된 상태를 뜻함
+    이후 선택자를 이용해 형제 혹은 자손 클래스를 가진 태그를 선택해서 효과를 줄 수 있음
+*/
+
+/* member image (회원 이미지) */
+.header .member_info>.member_image {
     width: 50px;
-    height: 45px;
-    background-color: #cccccc;
-    border-radius: 50px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+    height: 40px;
+
     text-align: center;
     line-height: 50px;
 
+    background-color: #cccccc;
+    padding-top: 10px;
+    overflow: hidden;
+
+    box-shadow: var(--color-shadow);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/*
+    overflow
+    자식 태그의 내용이 부모태그의 크기보다 클 경우
+    어떻게 처리할지 정하는 속성
+    hidden => 숨김
+    scroll => 항상 스크롤
+    auto => 자식 태그의 내용이 더 클 때만 스크롤 생김
+*/
+
+/* member name (회원 이름) */
+.header .member_info>.member_name {
+    font-size: var(--font-size-menu2);
+    text-shadow: var(--color-shadow);
+}
+
+.header .member_info>.member_menu {
+    position: absolute;
+    top: 100px;
+
+    width: 100px;
+}
+
+/* .member_ok, .member_nok 둘 다 한번에 적용하기 위해 ul로 지정 */
+.header .member_info>.member_menu>ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    font-size: var(--font-size-menu2);
+
+    background-repeat: no-repeat;
     padding-top: 5px;
 
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.header .member_info>.member_menu>ul>li {
     cursor: pointer;
 }
-.member_image > i {
+
+.header .member_info>.member_menu>ul>li:hover {
+    text-decoration: underline;
 }
 
-.member_name {
-    font-size: 12px;
-    font-weight: 600;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+/* member */
+.header .member_info>.member_menu>.member_ok {
+    height: 135px;
+
+    background-image: url(member_ok.png);
 }
 
-.viewport {
+/* !member */
+.header .member_info>.member_menu>.member_nok {
+    height: 100px;
+
+    ackground-image: url(member_nok.png);
+}
+
+/* main banner viewport ===== */
+.main>.viewport {
     width: 100vw;
     height: 100vh;
-    transition: 0.3s;
+
+    transition: height 0.3s;
 }
 
-.banner_viewport {
+/*
+    .viewport 용도
+    창문이라고 생각하면 됨
+    밖의 이미지를 창문 크기만큼 봄
+
+    height 100vh
+    초기설정은 화면 위아래 전부 차지
+*/
+
+.main>.viewport>.banner {
     width: 100%;
     /* height: 400px; */
-
     height: 100vh;
-    transition: 0.3s;
 
-    background-size: cover;
-
-    background-image: url(bg.jpg);
-    /*background-position: 0 -630px;*/
-    background-position-y: -10px;
-    background-repeat: no-repeat;
+    transition: background .3s;
+    /*
+        background-image: url(bg.jpg);
+        background-position-y: -10px;
+        background-repeat: no-repeat;
+        위에 설명한것처럼 한번에 줄 수 있음
+    */
+    background: url(bg.jpg) no-repeat 0px -390px;
 }
 
-/*member_index.css c+v*/
-.main_sub_page {
-    /*display: flex;*/
-    display: none;
-
-    flex-wrap: wrap;
-    width: 100vw;
-    height: calc(100vh - 300px);
-    /*margin-top: 60px;
-    margin-left: 50px;*/
-    overflow: auto;
-    box-sizing: border-box;
-
-    position: relative;
-}
-
-/*첫번째 페이지*/
-
-.item_box {
-    height: 100%;
-}
-.banner_img {
-    width: 1920px;
-    height: 400px;
-}
-
-/*검색바*/
-
-.search_box {
+/* main search bar ===== */
+.main .search_box {
     display: flex;
-    position: absolute;
-    flex-direction: row;
-
-    left: calc(50% - 300px / 2);
-    /*top: calc(100px + 300px / 2 - 62px / 2);*/
-    top: calc(100vh / 2 - 62px / 2);
-
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+
+    position: absolute;
+    top: calc(50vh - 62px / 2);
+    left: calc(50% - 300px / 2);
+    /*
+        화면 가운데로 보내기
+        총 넓이 or 높이의 50% - 가운데로 보낼 태그 넓이 or 높이 / 2
+        left나 top같은 속성은
+        가리키는 곳에서 부터 시작하기 때문에
+        중앙에서 태그의 반을 쪼갠다고 생각하면 됨
+        가운데로부터 반은 왼쪽 or 위로
+        나머지는 오른쪽 or 아래로
+    */
     width: 300px;
-    padding: 0px;
+
+    transition: top .3s;
 }
 
-.search_box > input {
-    flex: 1;
-    width: 100%;
+/* 검색창 */
+.main>.viewport .search_box>input {
+    width: 280px;
     height: 60px;
-    border-radius: 15px;
-    border: 1px solid rgb(245, 243, 243);
-    padding: 0 20px;
+
     text-align: left;
-    font-size: 12px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    font-size: var(--font-size-input);
+
+    padding-left: 20px;
+
+    box-shadow: var(--color-shadow);
+    border: none;
+    border-radius: var(--radius-basic);
 }
-.search_box > i {
-    position: absolute;
-    right: 30px;
-}
-.search_box > input:focus {
+
+.main>.viewport .search_box>input:focus {
     outline: none;
 }
-.fa-magnifying-glass {
-    /*돋보기*/
-    font-size: 16px;
-    color: #cccccc;
+
+/* 클릭되었을 때 생기는 border 제거 */
+
+.main>.viewport .search_box>input::placeholder {
+    color: var(--color-darkgray);
+}
+
+/* placeholder 속성 변경 */
+
+.main>.viewport .search_box>svg {
+    position: absolute;
+    right: 15px;
+
+    transition: stroke, text-shadow .3s;
     cursor: pointer;
 }
-.search_box > i > input {
-    text-align: center;
-    margin: 100%;
+
+.main>.viewport .search_box>svg:hover>circle,
+.main>.viewport .search_box>svg:hover>path {
+    stroke: var(--color-black);
 }
 
-/*두번째 페이지*/
-.container_sub {
+/* member_index 합치기 */
+/* ===== sub page (left, middle, right content, notice board ===== */
+.sub_content {
+    display: none;
+    flex-wrap: wrap;
+
+    width: 100vw;
+    height: calc(100vh - 300px);
+
+    /*margin-top: 60px;
+    margin-left: 50px;*/
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.sub_content>.sub_content_container {
     display: flex;
     justify-content: center;
-    align-items: center; /*flex준이유래~~*/
+    align-items: center;
+
     width: 100%;
     height: 600px;
-    background-color: white;
-    /*background-color: blue;*/
+
+    background-color: #fff;
 }
 
-.container_left {
+/* sub content left ===== */
+.sub_content .content_left {
     width: 300px;
     height: 500px;
     margin-right: 50px;
+    background: url(balloon.jpg);
 
+    font-size: var(--font-size-content2);
+    color: #fff;
+    word-spacing: -3px;
     text-align: center;
-    font-family: var(--font-logo);
-    border-radius: 20px;
 
-    position: relative;
-
-    transform: scale(1); /*default*/
-    transition: all 10s ease-in-out 0; /*부드러운모션을위해추가*/
+    border-radius: var(--radius-basic);
+    transition: drop-shadow, filter .3s;
+    /* transition: all 10s ease-in-out 0; */
+    /* 입력값이 잘못들어간듯 동작 안함!! */
+    /* 부드러운모션을위해추가 */
 }
 
-.container_left:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(3px 3px 5px #333);
+.sub_content .content_left:hover {
+    filter: brightness(120%) drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.2));
 }
 
-/*배경에만opacity를 주기 위해(글자는그대로)
-가상요소::before를 만들어 background image를 넣어줌*/
-.container_left::before {
+.sub_content .content_left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub_content .content_text>span {
+    display: block;
+    text-shadow: var(--shadow-basic);
+}
+
+.sub_content .content_text>a {
+    display: block;
+
+    font-weight: 600;
+    color: #fff;
+    text-shadow: var(--shadow-basic);
+
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.sub_content .content_text a:hover {
+    text-decoration: underline;
+}
+
+.sub_content .content_text>span:nth-of-type(1) {
+    font-family: var(--font-logo-title);
+    font-size: 30px;
+}
+
+.sub_content .content_text>span:nth-of-type(2) {
+    font-size: 16px;
+    margin-top: -10px;
+}
+
+.sub_content .content_text>span:nth-of-type(3) {
+    font-family: var(--font-logo-title);
+    font-size: 100px;
+    margin: 30px 0;
+}
+
+.sub_content .content_text>span:nth-of-type(4) {
+    font-size: 16px;
+}
+
+/*
+    content_text>span:nth-of-type(x)
+    content_text 태그 자식 중 span 태그 x번째를 가리킴
+*/
+
+/*
+배경에만opacity를 주기 위해(글자는그대로)
+가상요소::before를 만들어 background image를 넣어줌
+.content_left::before {
     content: "";
     background: url(balloon.jpg);
     background-size: cover;
@@ -303,29 +491,11 @@ body {
     left: 0px;
     right: 0px;
     bottom: 0px;
-}
-.container_left > p {
-    display: grid;
-    grid-template-rows: 0.5fr 0.3fr 0fr;
-    color: white;
+} 
+*/
 
-    position: relative;
-}
-.container_text {
-    margin-top: 136px;
-    margin-bottom: 139px;
-}
-.container_text1 {
-    font-size: 25px;
-}
-.container_text2 {
-}
-.container_text3 {
-    font-size: 100px;
-}
-.container_text4 {
-}
-.container_middle {
+/* sub content middle ===== */
+.sub_content .content_middle {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -333,83 +503,142 @@ body {
     width: 500px;
     height: 500px;
     margin-right: 50px;
-    background-color: white;
 }
-.container_middle_top {
-    display: flex;
 
+/* sub middle top */
+.sub_content .content_middle_top {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
     height: 300px;
     background: url(seoul.jpg);
-    border-radius: 15px;
+    border-radius: var(--radius-basic);
 
-    color: white;
+    color: #fff;
     text-align: center;
-    font-family: var(--font-logo);
-    font-size: 25px;
+    font-weight: 600;
+    font-family: var(--font-logo-title);
+    font-size: var(--font-size-head2);
+    text-shadow: var(--shadow-basic);
 
-    transform: scale(1); /*default*/
-    transition: all 10s ease-in-out 0; /*부드러운모션을위해추가*/
+    transition: drop-shadow, filter .3s;
+    /*부드러운모션을위해추가*/
 }
 
-.container_middle_top:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(3px 3px 5px #333);
+.content_middle_top:hover {
+    filter: brightness(120%) drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.2));
 }
 
-.container_middle_bottom {
+.content_middle_top>a {
+    display: block;
+    width: 40%;
+
+    font-family: var(--font-content);
+    font-size: var(--font-size-cont1);
+    text-align: right;
+    color: #fff;
+    text-shadow: var(--shadow-basic);
+
+    margin-top: -15px;
+
+    cursor: pointer;
+}
+
+.content_middle_top>a:hover {
+    text-decoration: underline;
+}
+
+/* sub middle bottom */
+.content_middle_bottom .content_middle_bottom {
     height: 160px;
-    background-color: white;
+
     text-align: center;
+
+    background-color: #fff;
 }
-.notice_board_view {
+
+.content_middle_bottom .content_middle_bottom>.notice_board_view {
     width: 100%;
     text-align: left;
 }
 
-.notice_board_title ~ .line {
+.content_middle_bottom .notice_board_title {
+    font-family: var(--font-logo-title);
+    font-size: var(--font-size-head5);
+}
+
+.content_middle_bottom .line {
     width: 500px;
     height: 3px;
+
     background-color: #333;
     margin-bottom: 10px;
+
+    border-radius: var(--radius-smaller);
     /*font-family: var(--font-content);>>>>왜안먹엉?root인가뭐신가에등록안한폰트잉가용?*/
+    /* 원래 --font-cont 로 저장되있어서 그래용 */
 }
-.notice_board_title {
-    font-family: var(--font-logo);
-    font-size: 20px;
+
+.content_middle_bottom .notice_board_title>span {
+    color: var(--color-green);
 }
-.notice_board_title > span {
-    color: #509797;
-}
-.notice_board_title ~ li {
-    font-size: 12px;
+
+.content_middle_bottom .notice_board_title~li {
+    font-size: var(--font-size-cont3);
+    color: #333;
+
     margin: 10px 0px;
     cursor: pointer;
-    color: #333;
 }
-.notice_board_title ~ li:hover {
-    color: #509797;
+
+.content_middle_bottom .notice_board_title~li:hover {
+    color: var(--color-green);
 }
-.notice_view_more {
+
+.content_middle_bottom .notice_view_more {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    color: #333;
-}
-.notice_view_more > input {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+
     color: #333;
 }
 
-.container_right {
+.content_middle_bottom .notice_view_more>.view_more {
+    width: 150px;
+    height: 30px;
+
+    font-size: var(--font-size-cont3);
+    color: #333;
+    text-align: center;
+
+    background-color: #fff;
+    margin-top: 5px;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: var(--radius-small);
+
+    cursor: pointer;
+    transition: filter .3s;
+}
+
+.content_middle_bottom .notice_view_more>.view_more:hover {
+    filter: brightness(90%);
+}
+
+.content_middle_bottom .notice_view_more>svg {
+    position: absolute;
+    bottom: 65px;
+}
+
+/* sub content right */
+.content_right {
     display: flex;
-    align-content: space-between; /*item은 개별, content는 통*/
     flex-wrap: wrap;
+    align-content: space-between;
+    /*item은 개별, content는 통*/
 
     width: 300px;
     height: 500px;
@@ -424,7 +653,7 @@ body {
     overflow: hidden;이랑 radius추가하면됨  */
 }
 
-.container_right > div {
+.content_right>.item {
     display: flex;
 
     align-items: center;
@@ -432,21 +661,32 @@ body {
 
     width: 300px;
     height: 80px;
-    background-color: #333333;
-    border-radius: 15px;
+    background-color: var(--color-black);
+    border-radius: var(--radius-basic);
 
-    transform: scale(1); /*default*/
-    transition: all 0.3s ease-in-out 0; /*부드러운모션을위해추가*/
+    transition: drop-shadow, filter .3s;
 }
 
-.container_right > div:hover {
-    transform: scale(1.2);
-    filter: drop-shadow(3px 3px 5px #333);
-    /*마우스오버시 효과 */
+.content_right>.item:hover {
+    filter: brightness(120%) drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.2));
+}
 
-    /*-webkit-transform: scale(1); 크롬
-    -moz-transform: scale(1); FireFox
-    -ms-transform: scale(1); 
-    -o-transform: scale(1);  Opera
-    */
+.content_right>.item:nth-last-of-type(1) {
+    background-image: url();
+}
+
+.content_right>.item:nth-last-of-type(2) {
+    background-image: url();
+}
+
+.content_right>.item:nth-last-of-type(3) {
+    background-image: url();
+}
+
+.content_right>.item:nth-last-of-type(4) {
+    background-image: url();
+}
+
+.content_right>.item:nth-last-of-type(5) {
+    background-image: url();
 }
