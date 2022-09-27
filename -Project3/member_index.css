@@ -1,0 +1,452 @@
+@import url(./reset.css);
+@import url(./webFont.css);
+@import url(./root.css);
+
+body {
+    font-family: var(--font-main);
+}
+
+.navigation_box {
+    width: 100vw;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+}
+
+.navigation_menu {
+    width: 1200px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+}
+.navigation_menu_list > li {
+    cursor: pointer;
+}
+
+.logo_box {
+    width: 150px;
+    height: 100px;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-logo);
+    font-size: 30px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+.logo_box::after {
+    content: "|";
+    animation: none;
+}
+.change_logo.logo_box::after {
+    animation: blink 0.5s step-end infinite;
+}
+
+@keyframes blink {
+    /*blink 임의임*/
+    0% {
+        opacity: 1;
+    }
+    49% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.menu_box {
+    width: 600px;
+    height: 100px;
+    /*background-color: beige;*/
+}
+
+.menu_box > ul {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+}
+
+.menu_box > ul > li {
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transform: scale(1); /*default*/
+    transition: all 0.3s ease-in-out 0; /*부드러운모션을위해추가*/
+}
+.menu_box > ul > li:hover {
+    transform: scale(1.1);
+}
+
+/*홍길동입니당*/
+.member_info {
+    width: 150px;
+    height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    align-items: center;
+}
+/*체크박스*/
+#member_menu {
+    display: none;
+}
+#member_menu:checked ~ .member_menu > .member_ok {
+    /*체크박스클릭시 member_ok나오게*/
+    display: flex;
+}
+.member_menu {
+    position: absolute;
+    top: 100px;
+    width: 100px;
+}
+.member_menu > ul {
+    background-repeat: no-repeat;
+    padding-top: 5px;
+    font-size: 12px;
+}
+.member_menu > ul > li {
+    cursor: pointer;
+}
+.member_ok {
+    height: 135px;
+    background-image: url(member_ok.png);
+
+    display: none;
+
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.member_nok {
+    height: 100px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image: url(member_nok.png);
+}
+
+.member_image {
+    width: 50px;
+    height: 45px;
+    background-color: #cccccc;
+    border-radius: 50px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    line-height: 50px;
+
+    padding-top: 5px;
+
+    cursor: pointer;
+}
+.member_image > i {
+}
+
+.member_name {
+    font-size: 12px;
+    font-weight: 600;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.viewport {
+    width: 100vw;
+    height: 100vh;
+    transition: 0.3s;
+}
+
+.banner_viewport {
+    width: 100%;
+    /* height: 400px; */
+
+    height: 100vh;
+    transition: 0.3s;
+
+    background-size: cover;
+
+    background-image: url(bg.jpg);
+    /*background-position: 0 -630px;*/
+    background-position-y: -10px;
+    background-repeat: no-repeat;
+}
+
+/*member_index.css c+v*/
+.main_sub_page {
+    /*display: flex;*/
+    display: none;
+
+    flex-wrap: wrap;
+    width: 100vw;
+    height: calc(100vh - 300px);
+    /*margin-top: 60px;
+    margin-left: 50px;*/
+    overflow: auto;
+    box-sizing: border-box;
+
+    position: relative;
+}
+
+/*첫번째 페이지*/
+
+.item_box {
+    height: 100%;
+}
+.banner_img {
+    width: 1920px;
+    height: 400px;
+}
+
+/*검색바*/
+
+.search_box {
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+
+    left: calc(50% - 300px / 2);
+    /*top: calc(100px + 300px / 2 - 62px / 2);*/
+    top: calc(100vh / 2 - 62px / 2);
+
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    padding: 0px;
+}
+
+.search_box > input {
+    flex: 1;
+    width: 100%;
+    height: 60px;
+    border-radius: 15px;
+    border: 1px solid rgb(245, 243, 243);
+    padding: 0 20px;
+    text-align: left;
+    font-size: 12px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+.search_box > i {
+    position: absolute;
+    right: 30px;
+}
+.search_box > input:focus {
+    outline: none;
+}
+.fa-magnifying-glass {
+    /*돋보기*/
+    font-size: 16px;
+    color: #cccccc;
+    cursor: pointer;
+}
+.search_box > i > input {
+    text-align: center;
+    margin: 100%;
+}
+
+/*두번째 페이지*/
+.container_sub {
+    display: flex;
+    justify-content: center;
+    align-items: center; /*flex준이유래~~*/
+    width: 100%;
+    height: 600px;
+    background-color: white;
+    /*background-color: blue;*/
+}
+
+.container_left {
+    width: 300px;
+    height: 500px;
+    margin-right: 50px;
+
+    text-align: center;
+    font-family: var(--font-logo);
+    border-radius: 20px;
+
+    position: relative;
+
+    transform: scale(1); /*default*/
+    transition: all 10s ease-in-out 0; /*부드러운모션을위해추가*/
+}
+
+.container_left:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(3px 3px 5px #333);
+}
+
+/*배경에만opacity를 주기 위해(글자는그대로)
+가상요소::before를 만들어 background image를 넣어줌*/
+.container_left::before {
+    content: "";
+    background: url(balloon.jpg);
+    background-size: cover;
+    border-radius: 15px;
+    opacity: 0.9;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+.container_left > p {
+    display: grid;
+    grid-template-rows: 0.5fr 0.3fr 0fr;
+    color: white;
+
+    position: relative;
+}
+.container_text {
+    margin-top: 136px;
+    margin-bottom: 139px;
+}
+.container_text1 {
+    font-size: 25px;
+}
+.container_text2 {
+}
+.container_text3 {
+    font-size: 100px;
+}
+.container_text4 {
+}
+.container_middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 500px;
+    height: 500px;
+    margin-right: 50px;
+    background-color: white;
+}
+.container_middle_top {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 300px;
+    background: url(seoul.jpg);
+    border-radius: 15px;
+
+    color: white;
+    text-align: center;
+    font-family: var(--font-logo);
+    font-size: 25px;
+
+    transform: scale(1); /*default*/
+    transition: all 10s ease-in-out 0; /*부드러운모션을위해추가*/
+}
+
+.container_middle_top:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(3px 3px 5px #333);
+}
+
+.container_middle_bottom {
+    height: 160px;
+    background-color: white;
+    text-align: center;
+}
+.notice_board_view {
+    width: 100%;
+    text-align: left;
+}
+
+.notice_board_title ~ .line {
+    width: 500px;
+    height: 3px;
+    background-color: #333;
+    margin-bottom: 10px;
+    /*font-family: var(--font-content);>>>>왜안먹엉?root인가뭐신가에등록안한폰트잉가용?*/
+}
+.notice_board_title {
+    font-family: var(--font-logo);
+    font-size: 20px;
+}
+.notice_board_title > span {
+    color: #509797;
+}
+.notice_board_title ~ li {
+    font-size: 12px;
+    margin: 10px 0px;
+    cursor: pointer;
+    color: #333;
+}
+.notice_board_title ~ li:hover {
+    color: #509797;
+}
+.notice_view_more {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #333;
+}
+.notice_view_more > input {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    color: #333;
+}
+
+.container_right {
+    display: flex;
+    align-content: space-between; /*item은 개별, content는 통*/
+    flex-wrap: wrap;
+
+    width: 300px;
+    height: 500px;
+    background-color: white;
+
+    color: white;
+    text-align: center;
+    font-family: var(--font-logo);
+    font-size: 15px;
+
+    /*    hover시(부모를)벗어나지않고 확대 원한다면
+    overflow: hidden;이랑 radius추가하면됨  */
+}
+
+.container_right > div {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 300px;
+    height: 80px;
+    background-color: #333333;
+    border-radius: 15px;
+
+    transform: scale(1); /*default*/
+    transition: all 0.3s ease-in-out 0; /*부드러운모션을위해추가*/
+}
+
+.container_right > div:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(3px 3px 5px #333);
+    /*마우스오버시 효과 */
+
+    /*-webkit-transform: scale(1); 크롬
+    -moz-transform: scale(1); FireFox
+    -ms-transform: scale(1); 
+    -o-transform: scale(1);  Opera
+    */
+}
