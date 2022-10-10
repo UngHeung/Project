@@ -62,8 +62,7 @@ const termsPage = document.querySelector(".mem-terms");
 
 function termsAgree() {
     termsPage.style.transition = "top 1.5s";
-    termsPage.style.transitionTimingFunction =
-        "cubic-bezier(0.11,-0.3, 0, 0.55)";
+    termsPage.style.transitionTimingFunction = "cubic-bezier(0.11,-0.3, 0, 0.55)";
     termsPage.style.top = "-1500px";
 }
 
