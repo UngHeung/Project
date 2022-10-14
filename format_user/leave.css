@@ -1,0 +1,238 @@
+@import url(../reset.css);
+@import url(../webFont.css);
+@import url(../root.css);
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    color: var(--basic-font-color);
+
+    height: 100vh;
+    background-color: var(--background-color-body);
+}
+
+/* ===== header[logo, user log ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--background-color-menu);
+}
+
+/* menu button area */
+.menu-btn-area {
+    width: 20%;
+}
+
+/* logo */
+.logo {
+    position: fixed;
+    left: calc(50% - 15%);
+    width: 30%;
+
+    font-family: var(--font-logo);
+    font-size: var(--font-size-logo);
+    line-height: 68px;
+    text-align: center;
+
+    transition: var(--transition-speed-normal);
+    cursor: pointer;
+}
+
+.logo-text:hover {
+    color: var(--font-hover-color-logo);
+}
+
+.logo-text::after {
+    content: "|";
+    animation: none;
+}
+
+.change-logo.logo-text::after {
+    animation: blink .5s step-end infinite;
+}
+
+
+/* user log */
+.user-log {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    width: calc(25% - 10px);
+    min-width: 150px;
+
+    padding-right: 10px;
+
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 12px;
+}
+
+.user-log p {
+    margin: 0 10px;
+
+    cursor: pointer;
+}
+
+.user-log p:hover {
+    color: var(--font-hover-color);
+}
+
+/* ===== article[menu, main content, sub content ===== */
+/* menu button */
+.cont-menu {
+    position: fixed;
+    top: 16px;
+    left: 12px;
+}
+
+.menu-btn {
+    width: 25px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu-btn div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 25px;
+    height: 25px;
+
+    cursor: pointer;
+}
+
+.menu-btn div svg g line {
+    transition: var(--transition-speed-fast);
+}
+
+.menu-btn div:hover>svg>g>line {
+    stroke: #B44949;
+}
+
+.menu-btn span .line {
+    width: 11px;
+    height: 1px;
+
+    transform: translate(0.5 0.5);
+    fill: none;
+    stroke: #333;
+    stroke-linecap: round;
+    stroke-width: 2px;
+}
+
+/* menu button checked */
+#menu-btn {
+    display: none;
+}
+
+#menu-btn:checked~.menu {
+    left: 0;
+}
+
+#menu-btn:checked~.menu-btn>div>svg>g>line {
+    position: absolute;
+    stroke: #B44949;
+}
+
+#menu-btn:checked~.menu-btn>div>svg>g>line:first-child {
+    transform: translate(35%, 54%) rotate(40deg);
+    opacity: 1;
+}
+
+#menu-btn:checked~.menu-btn>div>svg>g>line:nth-child(2) {
+    opacity: 1;
+}
+
+#menu-btn:checked~.menu-btn>div>svg>g>line:last-child {
+    transform: translate(35%, 124%) rotate(-40deg);
+    opacity: 1;
+}
+
+/* menu */
+.menu {
+    background-color: var(--background-color-menu);
+
+    position: fixed;
+    top: 60px;
+    left: -150px;
+
+    width: 150px;
+    height: calc(100vh - 60px);
+    padding-left: 50px;
+
+    transition: var(--transition-speed-fast);
+}
+
+/* menu list */
+.menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu ul li {
+    width: calc(100% - 20px);
+    height: 50px;
+
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 14px;
+    text-align: left;
+    letter-spacing: 5px;
+    line-height: 50px;
+    padding-left: 20px;
+
+    transition: var(--transition-speed-fast);
+    cursor: pointer;
+}
+
+.menu ul li:hover {
+    background-color: var(--background-color-menu-hover);
+    color: var(--font-hover-color-menu);
+    font-weight: 550;
+}
+
+.menu ul li:hover>.icon {
+    background-color: var(--background-color-menu-hover);
+}
+
+/* menu icon */
+.menu ul li .icon {
+    background-color: var(--background-color-menu);
+
+    position: fixed;
+    left: 0;
+
+    width: 50px;
+    height: 50px;
+
+    text-align: center;
+    line-height: 60px;
+
+    transition: var(--transition-speed-fast);
+}
+
+/* ===== animation ===== */
+/* blink */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    49% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
