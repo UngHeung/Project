@@ -39,12 +39,8 @@ function member_slide() {
     let image_size = 350;
     let slide_count = 0;
 
-    let prev_button = document.querySelector(
-        ".slide_button>svg:nth-of-type(1)"
-    );
-    let next_button = document.querySelector(
-        ".slide_button>svg:nth-of-type(2)"
-    );
+    let prev_button = document.querySelector(".slide_button>svg:nth-of-type(1)");
+    let next_button = document.querySelector(".slide_button>svg:nth-of-type(2)");
 
     prev_button.addEventListener("click", () => {
         slide_count--;
@@ -62,3 +58,19 @@ function member_slide() {
         console.log(slide_count);
     });
 }
+
+const edit_form_data = new FormData(document.edit_form);
+
+fetch("http://localhost:8080/inform_editOK", {
+    method: "POST",
+    body: edit_form_data,
+})
+    .then((response) => response.json())
+    .then(function (response) {
+        console.log(response);
+        //		if(response.check == null) {
+        //			alert("");
+        //		} else {
+        //			alert("");
+        //		}
+    });
